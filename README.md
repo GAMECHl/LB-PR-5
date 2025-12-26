@@ -16,12 +16,12 @@
 
 #### У блоці "2. РЕАЛІЗАЦІЯ ФІЛЬТРІВ" змінюємо TODO та return x на робочий кодта запускаємо скрипт. Лінії на графіках згладженні, тому все вірно:
 
-class SMAFilter:
+`` class SMAFilter:
     def __init__(self, w):
         self.w = w
         self.q = deque(maxlen=w)
-        self.sum = 0.0  # Для оптимізації O(1)
-
+        self.sum = 0.0  # Для оптимізації O(1) ``
+        
     def update(self, x):
         # Якщо черга повна, віднімаємо старий елемент
         if len(self.q) == self.w:
@@ -32,12 +32,12 @@ class SMAFilter:
         self.sum += x
         
         # Повертаємо середнє
-        return self.sum / len(self.q)
+        return self.sum / len(self.q) 
 
-class EMAFilter:
+`` class EMAFilter:
     def __init__(self, alpha):
         self.a = alpha
-        self.last = None
+        self.last = None ``
 
     def update(self, x):
         # Ініціалізація першим значенням
@@ -49,12 +49,12 @@ class EMAFilter:
         
         return self.last
 
-class MedianFilter:
+`` class MedianFilter:
     def __init__(self, w):
         if w % 2 == 0:
             w += 1
         self.w = w
-        self.q = deque(maxlen=w)
+        self.q = deque(maxlen=w)``
 
     def update(self, x):
         # Додаємо елемент у чергу
